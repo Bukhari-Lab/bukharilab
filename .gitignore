@@ -1,0 +1,9 @@
+_site/
+vendor/
+.jekyll-cache/
+.bundle/
+.sass-cache/
+.DS_Store
+*.gem
+.env
+.env.*

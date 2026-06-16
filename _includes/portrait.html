@@ -1,0 +1,64 @@
+{% if include.lookup %}
+  {% assign member = site.members
+    | where_exp: "member", "member.slug == include.lookup"
+    | first
+  %}
+{% else %}
+  {% assign member = include %}
+{% endif %}
+
+{% assign type = site.data.types[member.role] %}
+
+<div class="portrait-wrapper">
+  <div class="portrait" data-style="{{ include.style }}">
+    <a
+      {% if page.slug != member.slug %}
+        href="{{ member.url | relative_url | uri_escape }}"
+      {% endif %}
+      class="portrait-link"
+      aria-label="{{ member.name | default: "member link" | regex_strip }}"
+    >
+      {% if type %}
+        {% include icon.html icon=type.icon %}
+      {% endif %}
+
+      {% if member.image %}
+        <img
+          src="{{ member.image | relative_url | uri_escape }}"
+          class="portrait-image"
+          alt="member portrait"
+          loading="lazy"
+          {% include fallback.html %}
+        >
+      {% endif %}
+
+      {% if member.name %}
+        <span class="portrait-name">
+          {{ member.name }}
+        </span>
+      {% endif %}
+
+      {% if member.description or type %}
+        <span class="portrait-description">
+          {{ member.description | default: type.description }}
+        </span>
+      {% endif %}
+
+      {% if member.affiliation %}
+        <span class="portrait-affiliation">
+          {{ member.affiliation }}
+        </span>
+      {% endif %}
+    </a>
+
+    {% if member.links and page.layout != "member" %}
+      <div class="portrait-links">
+        {% for link in member.links %}
+          {% assign linkkey = link[0] %}
+          {% assign linkval = link[1] %}
+          {% include button.html type=linkkey link=linkval style="bare" %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
