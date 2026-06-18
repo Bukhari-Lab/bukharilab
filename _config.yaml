@@ -5,13 +5,15 @@ description: Advancing Biomedical Data Science through Transparent, Explainable,
 header: images/brand/nyc-banner.jpg
 footer: images/brand/nyc-banner.jpg
 proofer: false
+url: https://bukhari-lab.github.io
+baseurl: /bukharilab
 
 # site social media and other links
 links:
   # email: contact@your-lab.com
   # orcid: 0000-0001-8713-9213
   google-scholar: JhWJ5PEAAAAJ
-  github: bukharilab
+  github: Bukhari-Lab
   website: https://www.linkedin.com/company/bukharilab/posts/?feedView=all
   # twitter: YourLabHandle
   # youtube: YourLabChannel
