@@ -5,8 +5,8 @@ description: Advancing Biomedical Data Science through Transparent, Explainable,
 header: images/brand/nyc-banner.jpg
 footer: images/brand/nyc-banner.jpg
 proofer: false
-url: https://bukhari-lab.github.io
-baseurl: /bukharilab
+url: https://bukharilab.org
+baseurl: ""
 
 # site social media and other links
 links:
